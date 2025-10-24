@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{{ page.title }} - {{ site.title }}</title>
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css" />
 </head>
@@ -23,13 +24,15 @@
       <span id="closeModal" class="close">&times;</span>
       <h2>Create New Post</h2>
       <form id="postForm">
-        <label for="postTitle">Title:</label><br />
-        <input type="text" id="postTitle" name="postTitle" required /><br />
-        <label for="postContent">Content:</label><br />
-        <textarea id="postContent" name="postContent" rows="8" required></textarea><br />
+        <label for="postTitle">Title</label>
+        <input type="text" id="postTitle" name="postTitle" required />
+
+        <label for="postContent">Content</label>
+        <textarea id="postContent" name="postContent" rows="8" required></textarea>
+
         <button type="submit">Generate Markdown</button>
       </form>
-      <pre id="markdownOutput" style="white-space: pre-wrap;"></pre>
+      <pre id="markdownOutput"></pre>
       <button id="copyBtn">Copy to Clipboard</button>
       <button id="downloadBtn">Download .md File</button>
     </div>
