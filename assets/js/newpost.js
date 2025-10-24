@@ -1,13 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
   const modal = document.getElementById('postModal');
-  const openBtn = document.getElementById('newPostBtn');
+  const openBtn = document.getElementById('floatingNewPostBtn');
   const closeBtn = document.getElementById('closeModal');
   const form = document.getElementById('postForm');
   const output = document.getElementById('markdownOutput');
   const copyBtn = document.getElementById('copyBtn');
   const downloadBtn = document.getElementById('downloadBtn');
 
-  openBtn.onclick = () => modal.style.display = 'block';
+  if (openBtn) {
+    openBtn.onclick = () => modal.style.display = 'block';
+  }
   closeBtn.onclick = () => {
     modal.style.display = 'none';
     form.reset();
@@ -43,7 +45,6 @@ ${content}
 
     output.textContent = markdown;
 
-    // Store filename for download
     downloadBtn.setAttribute('data-filename', filename);
   });
 
