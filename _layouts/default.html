@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css" />
+</head>
+<body>
+  <header>
+    <nav class="nav-bar">
+      <a href="{{ site.baseurl }}/" class="nav-link">Home</a>
+      <a href="{{ site.baseurl }}/posts/" class="nav-link">Posts</a>
+      <button id="newPostBtn" class="nav-button">+ New Post</button>
+    </nav>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <div id="postModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2>Create New Post</h2>
+      <form id="postForm">
+        <label for="postTitle">Title:</label><br />
+        <input type="text" id="postTitle" name="postTitle" required /><br />
+        <label for="postContent">Content:</label><br />
+        <textarea id="postContent" name="postContent" rows="8" required></textarea><br />
+        <button type="submit">Generate Markdown</button>
+      </form>
+      <pre id="markdownOutput" style="white-space: pre-wrap;"></pre>
+      <button id="copyBtn">Copy to Clipboard</button>
+      <button id="downloadBtn">Download .md File</button>
+    </div>
+  </div>
+
+<script src="{{ site.baseurl }}/assets/js/newpost.js"></script>
+</body>
+</html>
