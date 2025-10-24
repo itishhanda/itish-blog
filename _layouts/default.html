@@ -18,12 +18,10 @@
     {{ content }}
   </main>
 
-  <!-- Floating New Post Button (only on /posts/) -->
   {% if page.url == '/posts/' %}
-  <button id="floatingNewPostBtn" title="New Post">+</button>
+  <button id="floatingNewPostBtn" title="Create New Post">+</button>
   {% endif %}
 
-  <!-- Modal for new post -->
   <div id="postModal" class="modal">
     <div class="modal-content">
       <span id="closeModal" class="close">&times;</span>
