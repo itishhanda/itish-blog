@@ -11,7 +11,6 @@
     <nav class="nav-bar">
       <a href="{{ site.baseurl }}/" class="nav-link">Home</a>
       <a href="{{ site.baseurl }}/posts/" class="nav-link">Posts</a>
-      <button id="newPostBtn" class="nav-button">+ New Post</button>
     </nav>
   </header>
 
@@ -19,6 +18,12 @@
     {{ content }}
   </main>
 
+  <!-- Floating New Post Button (only on /posts/) -->
+  {% if page.url == '/posts/' %}
+  <button id="floatingNewPostBtn" title="New Post">+</button>
+  {% endif %}
+
+  <!-- Modal for new post -->
   <div id="postModal" class="modal">
     <div class="modal-content">
       <span id="closeModal" class="close">&times;</span>
