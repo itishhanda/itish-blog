@@ -4,7 +4,7 @@ title: Home
 permalink: /
 ---
 
-# Welcome to itish's blog!
+# Welcome to itish-blog
 
-Hi! I'm itish, and this is my personal blog where I will document my processes and my experience exploring computer science and programming
+Hi! I'm itish, and this is my personal blog, I will be documented my progress in programming and computer science over time
 
