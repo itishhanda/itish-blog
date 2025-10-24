@@ -1,5 +1,5 @@
 title: itish-blog
 description: My personal blog by itishhanda
-baseurl: "/itish-blog"   # project repo name for correct asset paths
+baseurl: "/itish-blog"
 url: "https://itishhanda.github.io"
 paginate: 5
