@@ -7,17 +7,23 @@ document.addEventListener('DOMContentLoaded', function () {
   const copyBtn = document.getElementById('copyBtn');
   const downloadBtn = document.getElementById('downloadBtn');
 
+  // Open modal when floating button clicked
   if (openBtn) {
-    openBtn.onclick = () => modal.style.display = 'block';
+    openBtn.addEventListener('click', () => {
+      modal.style.display = 'block';
+    });
   }
+
+  // Close modal button
   closeBtn.onclick = () => {
     modal.style.display = 'none';
     form.reset();
     output.textContent = '';
   };
 
+  // Close modal if clicking outside content
   window.onclick = (e) => {
-    if (e.target == modal) {
+    if (e.target === modal) {
       modal.style.display = 'none';
       form.reset();
       output.textContent = '';
