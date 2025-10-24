@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
 
-/* Reset and base */
+/* Reset box sizing and base styles */
 * {
   box-sizing: border-box;
 }
@@ -10,15 +10,15 @@ body {
   color: #222;
   margin: 0;
   padding: 0;
-  line-height: 1.55;
   font-size: 16px;
+  line-height: 1.55;
 }
 
 /* Navigation bar */
 .nav-bar {
   display: flex;
   align-items: center;
-  background: #ffffff;
+  background: #fff;
   padding: 14px 48px;
   border-bottom: 1px solid #e6e6e6;
   box-shadow: 0 1px 5px rgba(0,0,0,0.07);
@@ -30,13 +30,12 @@ body {
 .nav-link {
   color: #444;
   font-weight: 600;
-  text-decoration: none;
   font-size: 1.1rem;
   margin-right: 32px;
   padding: 6px 0;
+  text-decoration: none;
   transition: color 0.25s ease;
 }
-
 .nav-link:hover,
 .nav-link:focus {
   color: #0277bd;
@@ -46,90 +45,74 @@ body {
 /* Main container */
 main {
   max-width: 720px;
-  margin: 48px auto;
+  margin: 60px auto;
   padding: 0 20px 80px;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
-/* Post list */
-.post-list {
+/* Post list styles (full content) */
+ul.post-list {
   list-style: none;
   padding: 0;
   margin-top: 32px;
 }
-
-.post-list li {
+li.post-full-content {
   background: #f9f9f9;
+  margin-bottom: 36px;
+  padding: 25px 30px;
   border-radius: 14px;
-  padding: 24px 28px;
-  margin-bottom: 24px;
   box-shadow: inset 0 0 8px #ddd;
-  transition: box-shadow 0.3s ease;
 }
-
-.post-list li:hover {
-  box-shadow: 0 0 14px #8cb8de;
-}
-
-.post-list a {
-  color: #0277bd;
-  font-size: 1.3rem;
+li.post-full-content h2 {
+  font-size: 1.9rem;
+  margin-bottom: 10px;
   font-weight: 700;
-  text-decoration: none;
-  line-height: 1.3;
-  transition: color 0.3s;
+  color: #0277bd;
 }
-
-.post-list a:hover,
-.post-list a:focus {
-  color: #014f86;
-  outline: none;
+li.post-full-content .post-date {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #777;
+  margin-bottom: 20px;
+}
+li.post-full-content .post-content {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #222;
+}
+li.post-full-content .post-content a {
+  color: #007acc;
   text-decoration: underline;
 }
-
-.post-date {
-  color: #7a7a7a;
-  font-size: 0.875rem;
-  margin: 8px 0 14px 0;
-  font-style: italic;
+li.post-full-content .post-content a:hover,
+li.post-full-content .post-content a:focus {
+  color: #014f86;
+  outline: none;
 }
 
-.post-list p {
-  margin: 0;
-  color: #333;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-/* Modal overlay */
+/* Modal styling */
 .modal {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(3px);
   z-index: 9999;
-  overflow-y: auto;
-  padding: 40px 0;
 }
-
-/* Modal content container */
 .modal-content {
   background: #ffffff;
-  margin: 0 auto;
+  margin: 80px auto;
   border-radius: 16px;
   width: 90%;
   max-width: 470px;
   padding: 30px 36px;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.12);
   position: relative;
   font-size: 16px;
   line-height: 1.5;
 }
-
-/* Close button */
 .close {
   position: absolute;
   right: 18px;
@@ -139,45 +122,36 @@ main {
   color: #999;
   cursor: pointer;
   transition: color 0.3s ease;
-  user-select: none;
 }
-
 .close:hover,
 .close:focus {
   color: #555;
-  outline: none;
 }
-
-/* Form styling */
 form label {
   display: block;
   font-weight: 600;
   margin-bottom: 8px;
+  margin-top: 18px;
   color: #444;
 }
-
-form input[type="text"],
-form textarea {
+input[type=text], textarea {
   width: 100%;
   padding: 14px 18px;
   border: 1.8px solid #bbb;
   border-radius: 12px;
   resize: vertical;
-  font-size: 1rem;
   font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1rem;
   transition: border-color 0.25s ease;
 }
-
-form input[type="text"]:focus,
-form textarea:focus {
+input[type=text]:focus,
+textarea:focus {
   border-color: #0277bd;
   outline: none;
 }
-
-/* Buttons */
 button {
   margin-top: 24px;
-  background-color: #0277bd;
+  background: #0277bd;
   color: #fff;
   font-weight: 700;
   padding: 14px 32px;
@@ -186,22 +160,15 @@ button {
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  user-select: none;
-  display: inline-block;
 }
-
-button:hover,
-button:focus {
+button:hover {
   background-color: #014f86;
-  outline: none;
 }
-
-/* Markdown output */
 #markdownOutput {
   background: #f7f8fa;
   margin-top: 20px;
   border-radius: 14px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Courier New', monospace;
   padding: 20px;
   max-height: 180px;
   overflow-y: auto;
@@ -209,7 +176,7 @@ button:focus {
   color: #2a2a2a;
 }
 
-/* Floating circular "+" button */
+/* Floating plus button in bottom right corner */
 #floatingNewPostBtn {
   position: fixed;
   bottom: 30px;
@@ -219,29 +186,25 @@ button:focus {
   border-radius: 50%;
   background-color: #0277bd;
   color: white;
-  font-size: 44px;
-  font-weight: 700;
+  font-size: 36px;
+  font-weight: bold;
   border: none;
   cursor: pointer;
-  user-select: none;
-  box-shadow: 0 8px 20px rgba(2, 119, 189, 0.5);
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   display: flex;
   align-items: center;
   justify-content: center;
-  line-height: 0;
   z-index: 10000;
+  line-height: 0;
+  transition: background-color 0.3s, transform 0.2s ease;
 }
-
-#floatingNewPostBtn:hover,
-#floatingNewPostBtn:focus {
+#floatingNewPostBtn:hover {
   background-color: #014f86;
-  outline: none;
   transform: scale(1.1);
 }
 
-/* Responsive text sizes */
-@media (max-width: 480px) {
+/* Responsive styles for small screens */
+@media(max-width: 480px){
   main {
     margin: 36px 12px;
     padding: 30px 24px;
@@ -256,6 +219,6 @@ button:focus {
   #floatingNewPostBtn {
     width: 54px;
     height: 54px;
-    font-size: 38px;
+    font-size: 30px;
   }
 }
