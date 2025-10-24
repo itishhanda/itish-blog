@@ -6,6 +6,5 @@ permalink: /
 
 # Welcome to itish-blog
 
-Hi! I'm itishhanda, and this is my personal blog built with Jekyll and GitHub Pages.
+Hi! I'm itish, and this is my personal blog where I will document my processes and my experience exploring computer science and programming
 
-Use the Posts tab to browse posts, or click + New Post to create one.
